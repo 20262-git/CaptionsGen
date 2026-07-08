@@ -1,6 +1,8 @@
+import AgendaController from './AgendaController'
 import Settings from './Settings'
 const Controllers = {
-    Settings: Object.assign(Settings, Settings),
+    AgendaController: Object.assign(AgendaController, AgendaController),
+Settings: Object.assign(Settings, Settings),
 }
 
 export default Controllers
