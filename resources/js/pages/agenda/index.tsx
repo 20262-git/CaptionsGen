@@ -2,7 +2,7 @@ import { Head, router, useForm } from '@inertiajs/react';
 import { format, parseISO } from 'date-fns';
 import { id as localeId } from 'date-fns/locale';
 import { Copy, Instagram, Music2, Pencil, Plus, Trash2, X } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
@@ -72,17 +72,43 @@ function emptyForm(tanggal: string): AgendaForm {
     };
 }
 
+/**
+ * Baca query prefill (?buat=1&judul=...&caption=...) yang dikirim dari
+ * halaman Generate Caption, biar modal kebuka otomatis dengan data terisi.
+ */
+function readPrefill(): { open: boolean; data: AgendaForm } {
+    const today = format(new Date(), 'yyyy-MM-dd');
+    const params = new URLSearchParams(window.location.search);
+
+    if (!params.has('buat')) {
+        return { open: false, data: emptyForm(today) };
+    }
+
+    return {
+        open: true,
+        data: {
+            judul: params.get('judul') ?? '',
+            caption: params.get('caption') ?? '',
+            platform:
+                params.get('platform') === 'tiktok' ? 'tiktok' : 'instagram',
+            status: 'draft',
+            tanggal: today,
+        },
+    };
+}
+
 export default function AgendaIndex({ agendas }: { agendas: Agenda[] }) {
+    const prefill = useMemo(() => readPrefill(), []);
     const [statusFilter, setStatusFilter] = useState<'semua' | AgendaStatus>(
         'semua',
     );
     const [dateFilter, setDateFilter] = useState<Date | undefined>(undefined);
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(prefill.open);
     const [editing, setEditing] = useState<Agenda | null>(null);
     const [, copy] = useClipboard();
 
     const { data, setData, post, put, processing, errors, reset, clearErrors } =
-        useForm<AgendaForm>(emptyForm(format(new Date(), 'yyyy-MM-dd')));
+        useForm<AgendaForm>(prefill.data);
 
     const dateKey = dateFilter ? format(dateFilter, 'yyyy-MM-dd') : null;
 
@@ -102,6 +128,13 @@ export default function AgendaIndex({ agendas }: { agendas: Agenda[] }) {
         () => agendas.map((a) => parseISO(a.tanggal)),
         [agendas],
     );
+
+    // Bersihkan query prefill biar refresh nggak buka modal lagi.
+    useEffect(() => {
+        if (prefill.open) {
+            window.history.replaceState({}, '', agenda.index().url);
+        }
+    }, [prefill.open]);
 
     function openCreate() {
         setEditing(null);

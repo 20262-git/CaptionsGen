@@ -1,6 +1,7 @@
 import { Head, router, useForm } from '@inertiajs/react';
 import {
     Briefcase,
+    CalendarPlus,
     Check,
     Copy,
     Instagram,
@@ -15,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useClipboard } from '@/hooks/use-clipboard';
+import agenda from '@/routes/agenda';
 import caption from '@/routes/caption';
 import type { Platform } from '@/types';
 
@@ -75,6 +77,23 @@ export default function CaptionIndex() {
         if (ok) {
             toast.success('Caption tersalin!');
         }
+    }
+
+    function buatKonten() {
+        if (!result) {
+            return;
+        }
+
+        router.visit(
+            agenda.index({
+                query: {
+                    buat: 1,
+                    judul: data.produk,
+                    caption: result,
+                    platform: data.platform,
+                },
+            }).url,
+        );
     }
 
     const activePlatform = PLATFORMS.find((p) => p.value === data.platform);
@@ -201,20 +220,30 @@ export default function CaptionIndex() {
                             {activePlatform?.label} · Gaya {activeTone?.label}
                         </span>
                         {result && (
-                            <Button
-                                type="button"
-                                onClick={handleCopy}
-                                variant="outline"
-                                size="sm"
-                                className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
-                            >
-                                {copied === result ? (
-                                    <Check className="size-4" />
-                                ) : (
-                                    <Copy className="size-4" />
-                                )}
-                                {copied === result ? 'Tersalin!' : 'Salin'}
-                            </Button>
+                            <div className="flex gap-2">
+                                <Button
+                                    type="button"
+                                    onClick={handleCopy}
+                                    variant="outline"
+                                    size="sm"
+                                    className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
+                                >
+                                    {copied === result ? (
+                                        <Check className="size-4" />
+                                    ) : (
+                                        <Copy className="size-4" />
+                                    )}
+                                    {copied === result ? 'Tersalin!' : 'Salin'}
+                                </Button>
+                                <Button
+                                    type="button"
+                                    onClick={buatKonten}
+                                    size="sm"
+                                >
+                                    <CalendarPlus className="size-4" />
+                                    Buat Konten
+                                </Button>
+                            </div>
                         )}
                     </div>
 
