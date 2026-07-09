@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use RuntimeException;
 
 class GeminiService
@@ -35,7 +36,16 @@ class GeminiService
             ]);
 
         if ($response->failed()) {
-            throw new RuntimeException('Gagal menghubungi Gemini API. Coba lagi.');
+            Log::warning('Gemini API error', [
+                'status' => $response->status(),
+                'body' => $response->body(),
+            ]);
+
+            throw new RuntimeException(match ($response->status()) {
+                401, 403 => 'API key Gemini tidak valid. Cek GEMINI_API_KEY di file .env.',
+                429 => 'Kuota Gemini habis atau model tidak tersedia untuk key ini. Coba lagi nanti atau ganti GEMINI_MODEL.',
+                default => 'Gagal menghubungi Gemini API. Coba lagi.',
+            });
         }
 
         $caption = $response->json('candidates.0.content.parts.0.text');
