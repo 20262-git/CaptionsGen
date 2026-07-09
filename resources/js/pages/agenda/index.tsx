@@ -1,8 +1,19 @@
 import { Head, router, useForm } from '@inertiajs/react';
 import { format, parseISO } from 'date-fns';
 import { id as localeId } from 'date-fns/locale';
-import { Copy, Instagram, Music2, Pencil, Plus, Trash2, X } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
+import {
+    Copy,
+    Film,
+    ImagePlus,
+    Instagram,
+    Music2,
+    Pencil,
+    Play,
+    Plus,
+    Trash2,
+    X,
+} from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
@@ -57,15 +68,21 @@ const FILTERS: { value: 'semua' | AgendaStatus; label: string }[] = [
 type AgendaForm = {
     judul: string;
     caption: string;
+    media: File | null;
+    hapus_media: boolean;
     platform: Platform;
     status: AgendaStatus;
     tanggal: string;
 };
 
+type MediaPreview = { url: string; type: 'image' | 'video' };
+
 function emptyForm(tanggal: string): AgendaForm {
     return {
         judul: '',
         caption: '',
+        media: null,
+        hapus_media: false,
         platform: 'instagram',
         status: 'draft',
         tanggal,
@@ -89,6 +106,8 @@ function readPrefill(): { open: boolean; data: AgendaForm } {
         data: {
             judul: params.get('judul') ?? '',
             caption: params.get('caption') ?? '',
+            media: null,
+            hapus_media: false,
             platform:
                 params.get('platform') === 'tiktok' ? 'tiktok' : 'instagram',
             status: 'draft',
@@ -105,10 +124,20 @@ export default function AgendaIndex({ agendas }: { agendas: Agenda[] }) {
     const [dateFilter, setDateFilter] = useState<Date | undefined>(undefined);
     const [open, setOpen] = useState(prefill.open);
     const [editing, setEditing] = useState<Agenda | null>(null);
+    const [mediaPreview, setMediaPreview] = useState<MediaPreview | null>(null);
     const [, copy] = useClipboard();
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
-    const { data, setData, post, put, processing, errors, reset, clearErrors } =
-        useForm<AgendaForm>(prefill.data);
+    const {
+        data,
+        setData,
+        post,
+        transform,
+        processing,
+        errors,
+        reset,
+        clearErrors,
+    } = useForm<AgendaForm>(prefill.data);
 
     const dateKey = dateFilter ? format(dateFilter, 'yyyy-MM-dd') : null;
 
@@ -140,6 +169,7 @@ export default function AgendaIndex({ agendas }: { agendas: Agenda[] }) {
         setEditing(null);
         clearErrors();
         reset();
+        setMediaPreview(null);
         setData(emptyForm(dateKey ?? format(new Date(), 'yyyy-MM-dd')));
         setOpen(true);
     }
@@ -150,11 +180,41 @@ export default function AgendaIndex({ agendas }: { agendas: Agenda[] }) {
         setData({
             judul: item.judul,
             caption: item.caption ?? '',
+            media: null,
+            hapus_media: false,
             platform: item.platform,
             status: item.status,
             tanggal: item.tanggal,
         });
+        setMediaPreview(
+            item.media_url
+                ? { url: item.media_url, type: item.media_type ?? 'image' }
+                : null,
+        );
         setOpen(true);
+    }
+
+    function pickMedia(e: React.ChangeEvent<HTMLInputElement>) {
+        const file = e.target.files?.[0];
+
+        if (!file) {
+            return;
+        }
+
+        setData((prev) => ({ ...prev, media: file, hapus_media: false }));
+        setMediaPreview({
+            url: URL.createObjectURL(file),
+            type: file.type.startsWith('video/') ? 'video' : 'image',
+        });
+    }
+
+    function removeMedia() {
+        setData((prev) => ({ ...prev, media: null, hapus_media: true }));
+        setMediaPreview(null);
+
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+        }
     }
 
     function submit(e: React.FormEvent) {
@@ -162,15 +222,20 @@ export default function AgendaIndex({ agendas }: { agendas: Agenda[] }) {
         const onSuccess = () => {
             setOpen(false);
             reset();
+            setMediaPreview(null);
+        };
+        const options = {
+            onSuccess,
+            preserveScroll: true,
+            forceFormData: true,
         };
 
         if (editing) {
-            put(agenda.update(editing.id).url, {
-                onSuccess,
-                preserveScroll: true,
-            });
+            transform((form) => ({ ...form, _method: 'put' }));
+            post(agenda.update(editing.id).url, options);
         } else {
-            post(agenda.store().url, { onSuccess, preserveScroll: true });
+            transform((form) => form);
+            post(agenda.store().url, options);
         }
     }
 
@@ -268,8 +333,31 @@ export default function AgendaIndex({ agendas }: { agendas: Agenda[] }) {
                                     className="group flex flex-col overflow-hidden rounded-2xl border border-sidebar-border/70 bg-card p-3 transition-colors hover:border-primary/40 dark:border-sidebar-border"
                                 >
                                     {/* Thumbnail */}
-                                    <div className="relative mb-3 flex aspect-square items-center justify-center rounded-xl bg-secondary">
-                                        <PlatformIcon className="size-10 text-muted-foreground/50" />
+                                    <div className="relative mb-3 flex aspect-square items-center justify-center overflow-hidden rounded-xl bg-secondary">
+                                        {item.media_url ? (
+                                            item.media_type === 'video' ? (
+                                                <>
+                                                    <video
+                                                        src={item.media_url}
+                                                        muted
+                                                        playsInline
+                                                        preload="metadata"
+                                                        className="size-full object-cover"
+                                                    />
+                                                    <span className="absolute flex size-9 items-center justify-center rounded-full bg-black/50 text-white">
+                                                        <Play className="size-4" />
+                                                    </span>
+                                                </>
+                                            ) : (
+                                                <img
+                                                    src={item.media_url}
+                                                    alt={item.judul}
+                                                    className="size-full object-cover"
+                                                />
+                                            )
+                                        ) : (
+                                            <PlatformIcon className="size-10 text-muted-foreground/50" />
+                                        )}
                                         <span className="absolute top-2 left-2 flex items-center gap-1 rounded-full bg-black/60 px-2 py-0.5 text-xs text-white backdrop-blur">
                                             <PlatformIcon className="size-3" />
                                             {platform?.label}
@@ -473,6 +561,67 @@ export default function AgendaIndex({ agendas }: { agendas: Agenda[] }) {
                             {errors.caption && (
                                 <p className="text-sm text-destructive">
                                     {errors.caption}
+                                </p>
+                            )}
+                        </div>
+
+                        <div className="grid gap-2">
+                            <Label>Foto / Video</Label>
+                            <input
+                                ref={fileInputRef}
+                                type="file"
+                                accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime"
+                                className="hidden"
+                                onChange={pickMedia}
+                            />
+                            {mediaPreview ? (
+                                <div className="relative aspect-video overflow-hidden rounded-xl bg-secondary">
+                                    {mediaPreview.type === 'video' ? (
+                                        <video
+                                            src={mediaPreview.url}
+                                            muted
+                                            playsInline
+                                            controls
+                                            className="size-full object-cover"
+                                        />
+                                    ) : (
+                                        <img
+                                            src={mediaPreview.url}
+                                            alt="Preview"
+                                            className="size-full object-cover"
+                                        />
+                                    )}
+                                    <Button
+                                        type="button"
+                                        variant="secondary"
+                                        size="icon"
+                                        onClick={removeMedia}
+                                        className="absolute top-2 right-2 size-8"
+                                    >
+                                        <X className="size-4" />
+                                    </Button>
+                                </div>
+                            ) : (
+                                <button
+                                    type="button"
+                                    onClick={() => fileInputRef.current?.click()}
+                                    className="flex aspect-video flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                                >
+                                    <span className="flex gap-2">
+                                        <ImagePlus className="size-5" />
+                                        <Film className="size-5" />
+                                    </span>
+                                    <span className="text-sm">
+                                        Upload foto atau video
+                                    </span>
+                                    <span className="text-xs text-muted-foreground">
+                                        JPG, PNG, WebP, MP4, MOV · maks 20MB
+                                    </span>
+                                </button>
+                            )}
+                            {errors.media && (
+                                <p className="text-sm text-destructive">
+                                    {errors.media}
                                 </p>
                             )}
                         </div>
