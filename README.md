@@ -20,7 +20,7 @@ kalender jadwal posting dan tombol salin caption.
 - **Backend:** Laravel
 - **Frontend:** React + TypeScript lewat Inertia
 - **UI:** shadcn/ui + Tailwind CSS (tema hijau + dark)
-- **Database:** SQLite
+- **Database:** MySQL
 - **Generate caption:** Gemini API (HTTP client bawaan Laravel)
 
 ## Cara Menjalankan
@@ -48,7 +48,8 @@ Butuh PHP, Composer, dan Node.js.
    GEMINI_MODEL=gemini-2.5-flash
    ```
 
-4. Siapkan database & storage:
+4. Buat database MySQL bernama `captsgen` (pakai MySQL bawaan Herd, user `root`
+   tanpa password), lalu jalankan migrasi & storage link:
 
    ```bash
    php artisan migrate --seed
