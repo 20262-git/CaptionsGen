@@ -1,5 +1,11 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, CalendarDays, FolderGit2, LayoutGrid } from 'lucide-react';
+import {
+    BookOpen,
+    FolderGit2,
+    LayoutGrid,
+    LayoutList,
+    Wand2,
+} from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
@@ -15,6 +21,7 @@ import {
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
 import agenda from '@/routes/agenda';
+import caption from '@/routes/caption';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
@@ -24,9 +31,14 @@ const mainNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
     {
-        title: 'Kalender',
+        title: 'Generate Caption',
+        href: caption.index(),
+        icon: Wand2,
+    },
+    {
+        title: 'Katalog Konten',
         href: agenda.index(),
-        icon: CalendarDays,
+        icon: LayoutList,
     },
 ];
 
