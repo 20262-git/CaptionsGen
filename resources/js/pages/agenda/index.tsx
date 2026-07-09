@@ -474,7 +474,7 @@ export default function AgendaIndex({ agendas }: { agendas: Agenda[] }) {
 
             {/* Form tambah / edit */}
             <Dialog open={open} onOpenChange={setOpen}>
-                <DialogContent>
+                <DialogContent className="max-h-[90vh] overflow-y-auto">
                     <form onSubmit={submit} className="flex flex-col gap-4">
                         <DialogHeader>
                             <DialogTitle>
