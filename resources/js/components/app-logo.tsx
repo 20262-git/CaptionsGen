@@ -1,13 +1,20 @@
 export default function AppLogo() {
     return (
         <>
-            <div className="flex aspect-square size-8 items-center justify-center rounded-md bg-white">
-                <img
-                    src="/favicon.svg"
-                    alt="CaptionGen"
-                    className="size-6"
-                />
-            </div>
+            <div
+                aria-label="CaptionGen"
+                className="size-8 shrink-0 bg-primary"
+                style={{
+                    maskImage: 'url(/images/logo.svg)',
+                    WebkitMaskImage: 'url(/images/logo.svg)',
+                    maskSize: 'contain',
+                    WebkitMaskSize: 'contain',
+                    maskRepeat: 'no-repeat',
+                    WebkitMaskRepeat: 'no-repeat',
+                    maskPosition: 'center',
+                    WebkitMaskPosition: 'center',
+                }}
+            />
             <div className="ml-1 grid flex-1 text-left text-sm">
                 <span className="mb-0.5 truncate leading-tight font-semibold">
                     CaptionGen
