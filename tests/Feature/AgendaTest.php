@@ -2,6 +2,8 @@
 
 use App\Models\Agenda;
 use App\Models\User;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 test('guests are redirected from the agenda page', function () {
     $this->get(route('agenda.index'))->assertRedirect(route('login'));
@@ -113,4 +115,46 @@ test('user cannot delete another users agenda', function () {
         ->assertForbidden();
 
     $this->assertModelExists($agenda);
+});
+
+test('user can upload an image thumbnail when creating an agenda', function () {
+    Storage::fake('public');
+    $user = User::factory()->create();
+
+    $this->actingAs($user)
+        ->post(route('agenda.store'), [
+            'judul' => 'Konten baru',
+            'platform' => 'instagram',
+            'status' => 'draft',
+            'tanggal' => '2026-08-01',
+            'media' => UploadedFile::fake()->image('thumb.jpg'),
+        ])
+        ->assertRedirect(route('agenda.index'));
+
+    $agenda = Agenda::first();
+
+    expect($agenda->media_type)->toBe('image');
+    Storage::disk('public')->assertExists($agenda->media_path);
+});
+
+test('deleting an agenda removes its uploaded media', function () {
+    Storage::fake('public');
+    $user = User::factory()->create();
+
+    $this->actingAs($user)->post(route('agenda.store'), [
+        'judul' => 'Konten video',
+        'platform' => 'tiktok',
+        'status' => 'draft',
+        'tanggal' => '2026-08-01',
+        'media' => UploadedFile::fake()->create('clip.mp4', 500, 'video/mp4'),
+    ]);
+
+    $agenda = Agenda::first();
+
+    expect($agenda->media_type)->toBe('video');
+    Storage::disk('public')->assertExists($agenda->media_path);
+
+    $this->actingAs($user)->delete(route('agenda.destroy', $agenda));
+
+    Storage::disk('public')->assertMissing($agenda->media_path);
 });

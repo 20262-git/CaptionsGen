@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\AgendaController::index
- * @see app/Http/Controllers/AgendaController.php:17
+ * @see app/Http/Controllers/AgendaController.php:18
  * @route '/agenda'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ index.definition = {
 
 /**
 * @see \App\Http\Controllers\AgendaController::index
- * @see app/Http/Controllers/AgendaController.php:17
+ * @see app/Http/Controllers/AgendaController.php:18
  * @route '/agenda'
  */
 index.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ index.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\AgendaController::index
- * @see app/Http/Controllers/AgendaController.php:17
+ * @see app/Http/Controllers/AgendaController.php:18
  * @route '/agenda'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -34,7 +34,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\AgendaController::index
- * @see app/Http/Controllers/AgendaController.php:17
+ * @see app/Http/Controllers/AgendaController.php:18
  * @route '/agenda'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -44,7 +44,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\AgendaController::index
- * @see app/Http/Controllers/AgendaController.php:17
+ * @see app/Http/Controllers/AgendaController.php:18
  * @route '/agenda'
  */
     const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -54,7 +54,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\AgendaController::index
- * @see app/Http/Controllers/AgendaController.php:17
+ * @see app/Http/Controllers/AgendaController.php:18
  * @route '/agenda'
  */
         indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -63,7 +63,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\AgendaController::index
- * @see app/Http/Controllers/AgendaController.php:17
+ * @see app/Http/Controllers/AgendaController.php:18
  * @route '/agenda'
  */
         indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -79,7 +79,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     index.form = indexForm
 /**
 * @see \App\Http\Controllers\AgendaController::store
- * @see app/Http/Controllers/AgendaController.php:29
+ * @see app/Http/Controllers/AgendaController.php:30
  * @route '/agenda'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -94,7 +94,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\AgendaController::store
- * @see app/Http/Controllers/AgendaController.php:29
+ * @see app/Http/Controllers/AgendaController.php:30
  * @route '/agenda'
  */
 store.url = (options?: RouteQueryOptions) => {
@@ -103,7 +103,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\AgendaController::store
- * @see app/Http/Controllers/AgendaController.php:29
+ * @see app/Http/Controllers/AgendaController.php:30
  * @route '/agenda'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -113,7 +113,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
 * @see \App\Http\Controllers\AgendaController::store
- * @see app/Http/Controllers/AgendaController.php:29
+ * @see app/Http/Controllers/AgendaController.php:30
  * @route '/agenda'
  */
     const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -123,7 +123,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
 * @see \App\Http\Controllers\AgendaController::store
- * @see app/Http/Controllers/AgendaController.php:29
+ * @see app/Http/Controllers/AgendaController.php:30
  * @route '/agenda'
  */
         storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -134,7 +134,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     store.form = storeForm
 /**
 * @see \App\Http\Controllers\AgendaController::update
- * @see app/Http/Controllers/AgendaController.php:41
+ * @see app/Http/Controllers/AgendaController.php:44
  * @route '/agenda/{agenda}'
  */
 export const update = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -149,7 +149,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\AgendaController::update
- * @see app/Http/Controllers/AgendaController.php:41
+ * @see app/Http/Controllers/AgendaController.php:44
  * @route '/agenda/{agenda}'
  */
 update.url = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
@@ -182,7 +182,7 @@ update.url = (args: { agenda: number | { id: number } } | [agenda: number | { id
 
 /**
 * @see \App\Http\Controllers\AgendaController::update
- * @see app/Http/Controllers/AgendaController.php:41
+ * @see app/Http/Controllers/AgendaController.php:44
  * @route '/agenda/{agenda}'
  */
 update.put = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -191,7 +191,7 @@ update.put = (args: { agenda: number | { id: number } } | [agenda: number | { id
 })
 /**
 * @see \App\Http\Controllers\AgendaController::update
- * @see app/Http/Controllers/AgendaController.php:41
+ * @see app/Http/Controllers/AgendaController.php:44
  * @route '/agenda/{agenda}'
  */
 update.patch = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'patch'> => ({
@@ -201,7 +201,7 @@ update.patch = (args: { agenda: number | { id: number } } | [agenda: number | { 
 
     /**
 * @see \App\Http\Controllers\AgendaController::update
- * @see app/Http/Controllers/AgendaController.php:41
+ * @see app/Http/Controllers/AgendaController.php:44
  * @route '/agenda/{agenda}'
  */
     const updateForm = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -216,7 +216,7 @@ update.patch = (args: { agenda: number | { id: number } } | [agenda: number | { 
 
             /**
 * @see \App\Http\Controllers\AgendaController::update
- * @see app/Http/Controllers/AgendaController.php:41
+ * @see app/Http/Controllers/AgendaController.php:44
  * @route '/agenda/{agenda}'
  */
         updateForm.put = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -230,7 +230,7 @@ update.patch = (args: { agenda: number | { id: number } } | [agenda: number | { 
         })
             /**
 * @see \App\Http\Controllers\AgendaController::update
- * @see app/Http/Controllers/AgendaController.php:41
+ * @see app/Http/Controllers/AgendaController.php:44
  * @route '/agenda/{agenda}'
  */
         updateForm.patch = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -246,7 +246,7 @@ update.patch = (args: { agenda: number | { id: number } } | [agenda: number | { 
     update.form = updateForm
 /**
 * @see \App\Http\Controllers\AgendaController::destroy
- * @see app/Http/Controllers/AgendaController.php:55
+ * @see app/Http/Controllers/AgendaController.php:60
  * @route '/agenda/{agenda}'
  */
 export const destroy = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -261,7 +261,7 @@ destroy.definition = {
 
 /**
 * @see \App\Http\Controllers\AgendaController::destroy
- * @see app/Http/Controllers/AgendaController.php:55
+ * @see app/Http/Controllers/AgendaController.php:60
  * @route '/agenda/{agenda}'
  */
 destroy.url = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
@@ -294,7 +294,7 @@ destroy.url = (args: { agenda: number | { id: number } } | [agenda: number | { i
 
 /**
 * @see \App\Http\Controllers\AgendaController::destroy
- * @see app/Http/Controllers/AgendaController.php:55
+ * @see app/Http/Controllers/AgendaController.php:60
  * @route '/agenda/{agenda}'
  */
 destroy.delete = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -304,7 +304,7 @@ destroy.delete = (args: { agenda: number | { id: number } } | [agenda: number | 
 
     /**
 * @see \App\Http\Controllers\AgendaController::destroy
- * @see app/Http/Controllers/AgendaController.php:55
+ * @see app/Http/Controllers/AgendaController.php:60
  * @route '/agenda/{agenda}'
  */
     const destroyForm = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -319,7 +319,7 @@ destroy.delete = (args: { agenda: number | { id: number } } | [agenda: number | 
 
             /**
 * @see \App\Http\Controllers\AgendaController::destroy
- * @see app/Http/Controllers/AgendaController.php:55
+ * @see app/Http/Controllers/AgendaController.php:60
  * @route '/agenda/{agenda}'
  */
         destroyForm.delete = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
