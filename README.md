@@ -5,6 +5,16 @@ pemula. Tinggal isi nama produk, keyword, pilih platform (Instagram/TikTok), dan
 bahasa — caption langsung dibuatkan lewat Gemini API. Ada juga katalog konten dengan
 kalender jadwal posting dan tombol salin caption.
 
+## Tampilan
+
+**Landing page**
+
+![Landing page](public/images/landing.png)
+
+**Generate caption**
+
+![Generate caption](public/images/captions.png)
+
 ## Fitur
 
 - Login & register
@@ -56,14 +66,14 @@ Butuh PHP, Composer, dan Node.js.
    php artisan storage:link
    ```
 
-5. Jalankan development server:
+5. Jalankan asset frontend:
 
    ```bash
-   php artisan serve
    npm run dev
    ```
 
-   Buka `http://localhost:8000` (atau URL Herd kalau pakai Herd).
+   Herd otomatis serve situsnya di `http://captsgen.test`. Kalau nggak pakai Herd,
+   jalanin `php artisan serve` lalu buka `http://localhost:8000`.
 
 ## Testing
 
