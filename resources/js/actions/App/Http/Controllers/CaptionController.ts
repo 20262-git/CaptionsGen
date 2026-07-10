@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Http\Controllers\CaptionController::index
  * @see app/Http/Controllers/CaptionController.php:17
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -11,13 +11,13 @@ export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 index.definition = {
     methods: ["get","head"],
-    url: '/caption',
+    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\CaptionController::index
  * @see app/Http/Controllers/CaptionController.php:17
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
 index.url = (options?: RouteQueryOptions) => {
     return index.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ index.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\CaptionController::index
  * @see app/Http/Controllers/CaptionController.php:17
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -35,7 +35,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\CaptionController::index
  * @see app/Http/Controllers/CaptionController.php:17
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: index.url(options),
@@ -45,7 +45,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Http\Controllers\CaptionController::index
  * @see app/Http/Controllers/CaptionController.php:17
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
     const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: index.url(options),
@@ -55,7 +55,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Http\Controllers\CaptionController::index
  * @see app/Http/Controllers/CaptionController.php:17
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
         indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url(options),
@@ -64,7 +64,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Http\Controllers\CaptionController::index
  * @see app/Http/Controllers/CaptionController.php:17
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
         indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url({
@@ -80,7 +80,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Http\Controllers\CaptionController::generate
  * @see app/Http/Controllers/CaptionController.php:25
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
 export const generate = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: generate.url(options),
@@ -89,13 +89,13 @@ export const generate = (options?: RouteQueryOptions): RouteDefinition<'post'> =
 
 generate.definition = {
     methods: ["post"],
-    url: '/caption',
+    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\CaptionController::generate
  * @see app/Http/Controllers/CaptionController.php:25
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
 generate.url = (options?: RouteQueryOptions) => {
     return generate.definition.url + queryParams(options)
@@ -104,7 +104,7 @@ generate.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\CaptionController::generate
  * @see app/Http/Controllers/CaptionController.php:25
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
 generate.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: generate.url(options),
@@ -114,7 +114,7 @@ generate.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     /**
 * @see \App\Http\Controllers\CaptionController::generate
  * @see app/Http/Controllers/CaptionController.php:25
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
     const generateForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: generate.url(options),
@@ -124,7 +124,7 @@ generate.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
             /**
 * @see \App\Http\Controllers\CaptionController::generate
  * @see app/Http/Controllers/CaptionController.php:25
- * @route '/caption'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/caption'
  */
         generateForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: generate.url(options),

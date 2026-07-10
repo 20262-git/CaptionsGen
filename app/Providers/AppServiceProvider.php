@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureDefaults();
+        // When developing through an external tunnel (ngrok), force generated
+        // URLs to use APP_URL so asset() and route() produce the tunnel domain.
+        $appUrl = env('APP_URL');
+        if ($appUrl) {
+            URL::forceRootUrl($appUrl);
+            if (Str::startsWith($appUrl, 'https://')) {
+                URL::forceScheme('https');
+            }
+        }
     }
 
     /**

@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Http\Controllers\AgendaController::index
  * @see app/Http/Controllers/AgendaController.php:18
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -11,13 +11,13 @@ export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 index.definition = {
     methods: ["get","head"],
-    url: '/agenda',
+    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\AgendaController::index
  * @see app/Http/Controllers/AgendaController.php:18
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
 index.url = (options?: RouteQueryOptions) => {
     return index.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ index.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\AgendaController::index
  * @see app/Http/Controllers/AgendaController.php:18
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -35,7 +35,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\AgendaController::index
  * @see app/Http/Controllers/AgendaController.php:18
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: index.url(options),
@@ -45,7 +45,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Http\Controllers\AgendaController::index
  * @see app/Http/Controllers/AgendaController.php:18
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
     const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: index.url(options),
@@ -55,7 +55,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Http\Controllers\AgendaController::index
  * @see app/Http/Controllers/AgendaController.php:18
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
         indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url(options),
@@ -64,7 +64,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Http\Controllers\AgendaController::index
  * @see app/Http/Controllers/AgendaController.php:18
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
         indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url({
@@ -80,7 +80,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Http\Controllers\AgendaController::store
  * @see app/Http/Controllers/AgendaController.php:30
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(options),
@@ -89,13 +89,13 @@ export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => (
 
 store.definition = {
     methods: ["post"],
-    url: '/agenda',
+    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\AgendaController::store
  * @see app/Http/Controllers/AgendaController.php:30
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
 store.url = (options?: RouteQueryOptions) => {
     return store.definition.url + queryParams(options)
@@ -104,7 +104,7 @@ store.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\AgendaController::store
  * @see app/Http/Controllers/AgendaController.php:30
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(options),
@@ -114,7 +114,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     /**
 * @see \App\Http\Controllers\AgendaController::store
  * @see app/Http/Controllers/AgendaController.php:30
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
     const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: store.url(options),
@@ -124,7 +124,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
             /**
 * @see \App\Http\Controllers\AgendaController::store
  * @see app/Http/Controllers/AgendaController.php:30
- * @route '/agenda'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda'
  */
         storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: store.url(options),
@@ -135,7 +135,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 /**
 * @see \App\Http\Controllers\AgendaController::update
  * @see app/Http/Controllers/AgendaController.php:44
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
 export const update = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
@@ -144,13 +144,13 @@ export const update = (args: { agenda: number | { id: number } } | [agenda: numb
 
 update.definition = {
     methods: ["put","patch"],
-    url: '/agenda/{agenda}',
+    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}',
 } satisfies RouteDefinition<["put","patch"]>
 
 /**
 * @see \App\Http\Controllers\AgendaController::update
  * @see app/Http/Controllers/AgendaController.php:44
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
 update.url = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -183,7 +183,7 @@ update.url = (args: { agenda: number | { id: number } } | [agenda: number | { id
 /**
 * @see \App\Http\Controllers\AgendaController::update
  * @see app/Http/Controllers/AgendaController.php:44
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
 update.put = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
@@ -192,7 +192,7 @@ update.put = (args: { agenda: number | { id: number } } | [agenda: number | { id
 /**
 * @see \App\Http\Controllers\AgendaController::update
  * @see app/Http/Controllers/AgendaController.php:44
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
 update.patch = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'patch'> => ({
     url: update.url(args, options),
@@ -202,7 +202,7 @@ update.patch = (args: { agenda: number | { id: number } } | [agenda: number | { 
     /**
 * @see \App\Http\Controllers\AgendaController::update
  * @see app/Http/Controllers/AgendaController.php:44
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
     const updateForm = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
@@ -217,7 +217,7 @@ update.patch = (args: { agenda: number | { id: number } } | [agenda: number | { 
             /**
 * @see \App\Http\Controllers\AgendaController::update
  * @see app/Http/Controllers/AgendaController.php:44
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
         updateForm.put = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
@@ -231,7 +231,7 @@ update.patch = (args: { agenda: number | { id: number } } | [agenda: number | { 
             /**
 * @see \App\Http\Controllers\AgendaController::update
  * @see app/Http/Controllers/AgendaController.php:44
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
         updateForm.patch = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {
@@ -247,7 +247,7 @@ update.patch = (args: { agenda: number | { id: number } } | [agenda: number | { 
 /**
 * @see \App\Http\Controllers\AgendaController::destroy
  * @see app/Http/Controllers/AgendaController.php:60
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
 export const destroy = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
@@ -256,13 +256,13 @@ export const destroy = (args: { agenda: number | { id: number } } | [agenda: num
 
 destroy.definition = {
     methods: ["delete"],
-    url: '/agenda/{agenda}',
+    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}',
 } satisfies RouteDefinition<["delete"]>
 
 /**
 * @see \App\Http\Controllers\AgendaController::destroy
  * @see app/Http/Controllers/AgendaController.php:60
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
 destroy.url = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -295,7 +295,7 @@ destroy.url = (args: { agenda: number | { id: number } } | [agenda: number | { i
 /**
 * @see \App\Http\Controllers\AgendaController::destroy
  * @see app/Http/Controllers/AgendaController.php:60
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
 destroy.delete = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
@@ -305,7 +305,7 @@ destroy.delete = (args: { agenda: number | { id: number } } | [agenda: number | 
     /**
 * @see \App\Http\Controllers\AgendaController::destroy
  * @see app/Http/Controllers/AgendaController.php:60
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
     const destroyForm = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: destroy.url(args, {
@@ -320,7 +320,7 @@ destroy.delete = (args: { agenda: number | { id: number } } | [agenda: number | 
             /**
 * @see \App\Http\Controllers\AgendaController::destroy
  * @see app/Http/Controllers/AgendaController.php:60
- * @route '/agenda/{agenda}'
+ * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/agenda/{agenda}'
  */
         destroyForm.delete = (args: { agenda: number | { id: number } } | [agenda: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: destroy.url(args, {

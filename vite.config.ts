@@ -7,7 +7,14 @@ import { bunny } from 'laravel-vite-plugin/fonts';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+    server: {
+    host: '0.0.0.0',
+    hmr: {
+      host: 'unhearing-ragweed-flatbed.ngrok-free.dev',
+    },
+  },
     plugins: [
+        
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.tsx'],
             refresh: true,
@@ -17,6 +24,7 @@ export default defineConfig({
                 }),
             ],
         }),
+        
         inertia(),
         react({
             babel: {
