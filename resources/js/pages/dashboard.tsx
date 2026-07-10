@@ -82,7 +82,7 @@ export default function Dashboard({
                 <div className="flex flex-wrap items-center justify-between gap-4">
                     <div>
                         <h1 className="text-xl font-semibold">
-                            Halo, selamat datang 👋
+                            Halo, selamat user 👋
                         </h1>
                         <p className="text-sm text-muted-foreground">
                             Ringkasan konten dan jadwal postingmu.

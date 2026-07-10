@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::store
  * @see vendor/laravel/fortify/src/Http/Controllers/AuthenticatedSessionController.php:58
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/login'
+ * @route 'http://captionsgen.test/login'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(options),
@@ -11,13 +11,13 @@ export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => (
 
 store.definition = {
     methods: ["post"],
-    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/login',
+    url: 'http://captionsgen.test/login',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::store
  * @see vendor/laravel/fortify/src/Http/Controllers/AuthenticatedSessionController.php:58
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/login'
+ * @route 'http://captionsgen.test/login'
  */
 store.url = (options?: RouteQueryOptions) => {
     return store.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ store.url = (options?: RouteQueryOptions) => {
 /**
 * @see \Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::store
  * @see vendor/laravel/fortify/src/Http/Controllers/AuthenticatedSessionController.php:58
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/login'
+ * @route 'http://captionsgen.test/login'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(options),
@@ -36,7 +36,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     /**
 * @see \Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::store
  * @see vendor/laravel/fortify/src/Http/Controllers/AuthenticatedSessionController.php:58
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/login'
+ * @route 'http://captionsgen.test/login'
  */
     const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: store.url(options),
@@ -46,7 +46,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
             /**
 * @see \Laravel\Fortify\Http\Controllers\AuthenticatedSessionController::store
  * @see vendor/laravel/fortify/src/Http/Controllers/AuthenticatedSessionController.php:58
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/login'
+ * @route 'http://captionsgen.test/login'
  */
         storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: store.url(options),

@@ -2,72 +2,72 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev'
+ * @route 'http://captionsgen.test'
  */
-const Controller163b3c2d7b5c2ec6a791837d956527b2 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: Controller163b3c2d7b5c2ec6a791837d956527b2.url(options),
+const Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.url(options),
     method: 'get',
 })
 
-Controller163b3c2d7b5c2ec6a791837d956527b2.definition = {
+Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.definition = {
     methods: ["get","head"],
-    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev',
+    url: 'http://captionsgen.test',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev'
+ * @route 'http://captionsgen.test'
  */
-Controller163b3c2d7b5c2ec6a791837d956527b2.url = (options?: RouteQueryOptions) => {
-    return Controller163b3c2d7b5c2ec6a791837d956527b2.definition.url + queryParams(options)
+Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.url = (options?: RouteQueryOptions) => {
+    return Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.definition.url + queryParams(options)
 }
 
 /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev'
+ * @route 'http://captionsgen.test'
  */
-Controller163b3c2d7b5c2ec6a791837d956527b2.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: Controller163b3c2d7b5c2ec6a791837d956527b2.url(options),
+Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.url(options),
     method: 'get',
 })
 /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev'
+ * @route 'http://captionsgen.test'
  */
-Controller163b3c2d7b5c2ec6a791837d956527b2.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
-    url: Controller163b3c2d7b5c2ec6a791837d956527b2.url(options),
+Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.url(options),
     method: 'head',
 })
 
     /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev'
+ * @route 'http://captionsgen.test'
  */
-    const Controller163b3c2d7b5c2ec6a791837d956527b2Form = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: Controller163b3c2d7b5c2ec6a791837d956527b2.url(options),
+    const Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5Form = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.url(options),
         method: 'get',
     })
 
             /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev'
+ * @route 'http://captionsgen.test'
  */
-        Controller163b3c2d7b5c2ec6a791837d956527b2Form.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: Controller163b3c2d7b5c2ec6a791837d956527b2.url(options),
+        Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5Form.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.url(options),
             method: 'get',
         })
             /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev'
+ * @route 'http://captionsgen.test'
  */
-        Controller163b3c2d7b5c2ec6a791837d956527b2Form.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: Controller163b3c2d7b5c2ec6a791837d956527b2.url({
+        Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5Form.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.url({
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
                             ...(options?.query ?? options?.mergeQuery ?? {}),
@@ -76,76 +76,76 @@ Controller163b3c2d7b5c2ec6a791837d956527b2.head = (options?: RouteQueryOptions):
             method: 'get',
         })
     
-    Controller163b3c2d7b5c2ec6a791837d956527b2.form = Controller163b3c2d7b5c2ec6a791837d956527b2Form
+    Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5.form = Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5Form
     /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/appearance'
+ * @route 'http://captionsgen.test/settings/appearance'
  */
-const Controllerf137d46b817fa153effe98d274e16f87 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: Controllerf137d46b817fa153effe98d274e16f87.url(options),
+const Controller2ed329837fe32c545d46fc47580b1f04 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controller2ed329837fe32c545d46fc47580b1f04.url(options),
     method: 'get',
 })
 
-Controllerf137d46b817fa153effe98d274e16f87.definition = {
+Controller2ed329837fe32c545d46fc47580b1f04.definition = {
     methods: ["get","head"],
-    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/appearance',
+    url: 'http://captionsgen.test/settings/appearance',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/appearance'
+ * @route 'http://captionsgen.test/settings/appearance'
  */
-Controllerf137d46b817fa153effe98d274e16f87.url = (options?: RouteQueryOptions) => {
-    return Controllerf137d46b817fa153effe98d274e16f87.definition.url + queryParams(options)
+Controller2ed329837fe32c545d46fc47580b1f04.url = (options?: RouteQueryOptions) => {
+    return Controller2ed329837fe32c545d46fc47580b1f04.definition.url + queryParams(options)
 }
 
 /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/appearance'
+ * @route 'http://captionsgen.test/settings/appearance'
  */
-Controllerf137d46b817fa153effe98d274e16f87.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
-    url: Controllerf137d46b817fa153effe98d274e16f87.url(options),
+Controller2ed329837fe32c545d46fc47580b1f04.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controller2ed329837fe32c545d46fc47580b1f04.url(options),
     method: 'get',
 })
 /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/appearance'
+ * @route 'http://captionsgen.test/settings/appearance'
  */
-Controllerf137d46b817fa153effe98d274e16f87.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
-    url: Controllerf137d46b817fa153effe98d274e16f87.url(options),
+Controller2ed329837fe32c545d46fc47580b1f04.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: Controller2ed329837fe32c545d46fc47580b1f04.url(options),
     method: 'head',
 })
 
     /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/appearance'
+ * @route 'http://captionsgen.test/settings/appearance'
  */
-    const Controllerf137d46b817fa153effe98d274e16f87Form = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: Controllerf137d46b817fa153effe98d274e16f87.url(options),
+    const Controller2ed329837fe32c545d46fc47580b1f04Form = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: Controller2ed329837fe32c545d46fc47580b1f04.url(options),
         method: 'get',
     })
 
             /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/appearance'
+ * @route 'http://captionsgen.test/settings/appearance'
  */
-        Controllerf137d46b817fa153effe98d274e16f87Form.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: Controllerf137d46b817fa153effe98d274e16f87.url(options),
+        Controller2ed329837fe32c545d46fc47580b1f04Form.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: Controller2ed329837fe32c545d46fc47580b1f04.url(options),
             method: 'get',
         })
             /**
 * @see \Inertia\Controller::__invoke
  * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/appearance'
+ * @route 'http://captionsgen.test/settings/appearance'
  */
-        Controllerf137d46b817fa153effe98d274e16f87Form.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: Controllerf137d46b817fa153effe98d274e16f87.url({
+        Controller2ed329837fe32c545d46fc47580b1f04Form.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: Controller2ed329837fe32c545d46fc47580b1f04.url({
                         [options?.mergeQuery ? 'mergeQuery' : 'query']: {
                             _method: 'HEAD',
                             ...(options?.query ?? options?.mergeQuery ?? {}),
@@ -154,7 +154,7 @@ Controllerf137d46b817fa153effe98d274e16f87.head = (options?: RouteQueryOptions):
             method: 'get',
         })
     
-    Controllerf137d46b817fa153effe98d274e16f87.form = Controllerf137d46b817fa153effe98d274e16f87Form
+    Controller2ed329837fe32c545d46fc47580b1f04.form = Controller2ed329837fe32c545d46fc47580b1f04Form
 
 /**
 * Multiple routes resolve to \Inertia\Controller::Controller, so this export is a
@@ -162,8 +162,8 @@ Controllerf137d46b817fa153effe98d274e16f87.head = (options?: RouteQueryOptions):
 * or import the route by name from your generated `routes/` directory.
 */
 const Controller = {
-    'https://unhearing-ragweed-flatbed.ngrok-free.dev': Controller163b3c2d7b5c2ec6a791837d956527b2,
-    'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/appearance': Controllerf137d46b817fa153effe98d274e16f87,
+    'http://captionsgen.test': Controllerf1dd89ebea9aa6a9d9fdc7dd224013a5,
+    'http://captionsgen.test/settings/appearance': Controller2ed329837fe32c545d46fc47580b1f04,
 }
 
 export default Controller

@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Http\Controllers\Settings\SecurityController::update
  * @see app/Http/Controllers/Settings/SecurityController.php:56
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/password'
+ * @route 'http://captionsgen.test/settings/password'
  */
 export const update = (options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(options),
@@ -11,13 +11,13 @@ export const update = (options?: RouteQueryOptions): RouteDefinition<'put'> => (
 
 update.definition = {
     methods: ["put"],
-    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/password',
+    url: 'http://captionsgen.test/settings/password',
 } satisfies RouteDefinition<["put"]>
 
 /**
 * @see \App\Http\Controllers\Settings\SecurityController::update
  * @see app/Http/Controllers/Settings/SecurityController.php:56
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/password'
+ * @route 'http://captionsgen.test/settings/password'
  */
 update.url = (options?: RouteQueryOptions) => {
     return update.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ update.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Settings\SecurityController::update
  * @see app/Http/Controllers/Settings/SecurityController.php:56
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/password'
+ * @route 'http://captionsgen.test/settings/password'
  */
 update.put = (options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(options),
@@ -36,7 +36,7 @@ update.put = (options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     /**
 * @see \App\Http\Controllers\Settings\SecurityController::update
  * @see app/Http/Controllers/Settings/SecurityController.php:56
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/password'
+ * @route 'http://captionsgen.test/settings/password'
  */
     const updateForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url({
@@ -51,7 +51,7 @@ update.put = (options?: RouteQueryOptions): RouteDefinition<'put'> => ({
             /**
 * @see \App\Http\Controllers\Settings\SecurityController::update
  * @see app/Http/Controllers/Settings/SecurityController.php:56
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/settings/password'
+ * @route 'http://captionsgen.test/settings/password'
  */
         updateForm.put = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url({

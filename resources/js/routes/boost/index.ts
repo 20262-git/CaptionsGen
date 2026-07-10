@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../../wayfinder'
 /**
  * @see vendor/laravel/boost/src/BoostServiceProvider.php:92
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/_boost/browser-logs'
+ * @route 'http://captionsgen.test/_boost/browser-logs'
  */
 export const browserLogs = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: browserLogs.url(options),
@@ -10,12 +10,12 @@ export const browserLogs = (options?: RouteQueryOptions): RouteDefinition<'post'
 
 browserLogs.definition = {
     methods: ["post"],
-    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/_boost/browser-logs',
+    url: 'http://captionsgen.test/_boost/browser-logs',
 } satisfies RouteDefinition<["post"]>
 
 /**
  * @see vendor/laravel/boost/src/BoostServiceProvider.php:92
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/_boost/browser-logs'
+ * @route 'http://captionsgen.test/_boost/browser-logs'
  */
 browserLogs.url = (options?: RouteQueryOptions) => {
     return browserLogs.definition.url + queryParams(options)
@@ -23,7 +23,7 @@ browserLogs.url = (options?: RouteQueryOptions) => {
 
 /**
  * @see vendor/laravel/boost/src/BoostServiceProvider.php:92
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/_boost/browser-logs'
+ * @route 'http://captionsgen.test/_boost/browser-logs'
  */
 browserLogs.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: browserLogs.url(options),
@@ -32,7 +32,7 @@ browserLogs.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
  * @see vendor/laravel/boost/src/BoostServiceProvider.php:92
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/_boost/browser-logs'
+ * @route 'http://captionsgen.test/_boost/browser-logs'
  */
     const browserLogsForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: browserLogs.url(options),
@@ -41,7 +41,7 @@ browserLogs.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
  * @see vendor/laravel/boost/src/BoostServiceProvider.php:92
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/_boost/browser-logs'
+ * @route 'http://captionsgen.test/_boost/browser-logs'
  */
         browserLogsForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: browserLogs.url(options),

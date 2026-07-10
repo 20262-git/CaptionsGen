@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Http\Controllers\DashboardController::__invoke
  * @see app/Http/Controllers/DashboardController.php:14
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/dashboard'
+ * @route 'http://captionsgen.test/dashboard'
  */
 const DashboardController = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: DashboardController.url(options),
@@ -11,13 +11,13 @@ const DashboardController = (options?: RouteQueryOptions): RouteDefinition<'get'
 
 DashboardController.definition = {
     methods: ["get","head"],
-    url: 'https://unhearing-ragweed-flatbed.ngrok-free.dev/dashboard',
+    url: 'http://captionsgen.test/dashboard',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\DashboardController::__invoke
  * @see app/Http/Controllers/DashboardController.php:14
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/dashboard'
+ * @route 'http://captionsgen.test/dashboard'
  */
 DashboardController.url = (options?: RouteQueryOptions) => {
     return DashboardController.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ DashboardController.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\DashboardController::__invoke
  * @see app/Http/Controllers/DashboardController.php:14
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/dashboard'
+ * @route 'http://captionsgen.test/dashboard'
  */
 DashboardController.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: DashboardController.url(options),
@@ -35,7 +35,7 @@ DashboardController.get = (options?: RouteQueryOptions): RouteDefinition<'get'> 
 /**
 * @see \App\Http\Controllers\DashboardController::__invoke
  * @see app/Http/Controllers/DashboardController.php:14
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/dashboard'
+ * @route 'http://captionsgen.test/dashboard'
  */
 DashboardController.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: DashboardController.url(options),
@@ -45,7 +45,7 @@ DashboardController.head = (options?: RouteQueryOptions): RouteDefinition<'head'
     /**
 * @see \App\Http\Controllers\DashboardController::__invoke
  * @see app/Http/Controllers/DashboardController.php:14
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/dashboard'
+ * @route 'http://captionsgen.test/dashboard'
  */
     const DashboardControllerForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: DashboardController.url(options),
@@ -55,7 +55,7 @@ DashboardController.head = (options?: RouteQueryOptions): RouteDefinition<'head'
             /**
 * @see \App\Http\Controllers\DashboardController::__invoke
  * @see app/Http/Controllers/DashboardController.php:14
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/dashboard'
+ * @route 'http://captionsgen.test/dashboard'
  */
         DashboardControllerForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: DashboardController.url(options),
@@ -64,7 +64,7 @@ DashboardController.head = (options?: RouteQueryOptions): RouteDefinition<'head'
             /**
 * @see \App\Http\Controllers\DashboardController::__invoke
  * @see app/Http/Controllers/DashboardController.php:14
- * @route 'https://unhearing-ragweed-flatbed.ngrok-free.dev/dashboard'
+ * @route 'http://captionsgen.test/dashboard'
  */
         DashboardControllerForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: DashboardController.url({
